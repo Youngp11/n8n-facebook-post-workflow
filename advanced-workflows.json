@@ -1,0 +1,189 @@
+{
+  "workflows": [
+    {
+      "name": "Multi-Language Content Generator",
+      "description": "Tạo content bằng nhiều ngôn ngữ và tự động đăng",
+      "nodes": [
+        "Generate Content (Vietnamese)",
+        "Translate to English",
+        "Translate to Spanish",
+        "Post to Multiple Pages",
+        "Track Performance"
+      ]
+    },
+    {
+      "name": "Viral Content Optimizer",
+      "description": "Phân tích trending topics và tạo content trending",
+      "nodes": [
+        "Fetch Trending Topics (Twitter/Google)",
+        "Generate AI Content (based on trends)",
+        "Generate Viral Image",
+        "A/B Test (create 2 versions)",
+        "Post Both to Different Times",
+        "Compare Performance"
+      ]
+    },
+    {
+      "name": "RSS Feed to Facebook Auto-Publisher",
+      "description": "Lấy content từ RSS feed, AI process, rồi đăng",
+      "nodes": [
+        "Fetch RSS Feed",
+        "Extract Article Content",
+        "Summarize with AI",
+        "Generate Image based on summary",
+        "Create Facebook Post",
+        "Post to Page"
+      ]
+    },
+    {
+      "name": "User-Driven Content Workflow",
+      "description": "Dùng webhook để user submit content ideas",
+      "nodes": [
+        "Webhook (receive submissions)",
+        "Moderate Content",
+        "Enhance with AI",
+        "Add Image",
+        "Schedule Post",
+        "Send confirmation to user"
+      ]
+    },
+    {
+      "name": "Analytics & Reporting",
+      "description": "Lấy stats từ Facebook posts và tạo report",
+      "nodes": [
+        "Get Recent Posts from Page",
+        "Fetch Post Insights",
+        "Calculate KPIs (engagement rate, reach)",
+        "Create Report",
+        "Send via Email/Slack",
+        "Store in Database"
+      ]
+    }
+  ],
+  "advanced_features": {
+    "content_moderation": {
+      "description": "Kiểm duyệt nội dung trước khi đăng",
+      "use_services": [
+        "OpenAI Moderation API",
+        "Google Content Moderation",
+        "Custom moderation rules"
+      ],
+      "config": {
+        "check_hate_speech": true,
+        "check_violence": true,
+        "check_adult_content": true,
+        "check_spam": true,
+        "custom_keywords_blacklist": ["spam_word_1", "spam_word_2"]
+      }
+    },
+    "ab_testing": {
+      "description": "Test 2 versions của post và compare performance",
+      "variations": [
+        {
+          "name": "Version A",
+          "changes": ["Different headline", "Same image"]
+        },
+        {
+          "name": "Version B",
+          "changes": ["Same headline", "Different image"]
+        }
+      ],
+      "metrics": ["reach", "engagement", "clicks", "shares"]
+    },
+    "scheduled_posting": {
+      "description": "Tự động lên lịch posts vào optimal times",
+      "optimal_times": {
+        "weekdays": ["09:00", "12:00", "18:00", "20:00"],
+        "weekends": ["10:00", "14:00", "19:00", "21:00"]
+      },
+      "timezone": "Asia/Ho_Chi_Minh"
+    },
+    "content_variety": {
+      "description": "Xoay vòng giữa các loại content khác nhau",
+      "content_types": [
+        "Text only (50%)",
+        "Image post (30%)",
+        "Carousel (15%)",
+        "Video (5%)"
+      ]
+    },
+    "hashtag_optimization": {
+      "description": "Tự động thêm hashtag phù hợp",
+      "strategy": "Mix of popular (#hashtag 1M+) + niche (#hashtag 100k) + branded (#brand)",
+      "max_hashtags": 20,
+      "placement": "end of post"
+    },
+    "engagement_automation": {
+      "description": "Tự động like/comment trên posts liên quan",
+      "triggers": [
+        "Reply to all comments with AI chatbot",
+        "Like competitor posts",
+        "Comment on industry hashtags"
+      ],
+      "rate_limit": "Max 30 actions/hour to avoid spam flag"
+    }
+  },
+  "integrations": {
+    "databases": [
+      "PostgreSQL - Store posts history & analytics",
+      "MongoDB - Flexible document storage",
+      "Supabase - Firebase alternative with N8N support"
+    ],
+    "communication": [
+      "Slack - Notifications & approvals",
+      "Discord - Bot notifications",
+      "Telegram - Real-time alerts",
+      "Email - Daily/Weekly reports"
+    ],
+    "analytics": [
+      "Google Analytics - Track website traffic from posts",
+      "Meta Analytics - Facebook insights",
+      "Typeform - Survey responses after posts"
+    ],
+    "content_sources": [
+      "RSS Feeds - News aggregation",
+      "Twitter API - Trending topics",
+      "Reddit API - Trending discussions",
+      "HackerNews - Tech news",
+      "Medium - Articles"
+    ]
+  },
+  "cost_optimization": {
+    "tips": [
+      "Use GPT-3.5 instead of GPT-4 (10x cheaper)",
+      "Batch requests (combine multiple prompts)",
+      "Cache images (reuse same image for multiple posts)",
+      "Schedule during off-peak hours",
+      "Use lower resolution images (DALL-E nano instead of standard)"
+    ],
+    "estimated_costs": {
+      "per_post": {
+        "openai_text": "$0.01-0.05",
+        "openai_image": "$0.02-0.04",
+        "total_per_post": "$0.03-0.09",
+        "monthly_5_posts_day": "$4.5-13.5"
+      }
+    }
+  },
+  "compliance_checklist": {
+    "facebook_policies": [
+      "❌ No spam or repetitive content",
+      "❌ No misleading/clickbait headlines",
+      "❌ No copyright violations",
+      "❌ No engagement pods or artificial engagement",
+      "✅ Include source/credits if sharing others' content",
+      "✅ Disclose if using AI-generated content",
+      "✅ Respect community standards"
+    ],
+    "gdpr": [
+      "Don't collect personal data without consent",
+      "Have privacy policy",
+      "Allow data deletion requests"
+    ],
+    "openai_usage": [
+      "Comply with OpenAI ToS",
+      "No generating spam/malware",
+      "No illegal content"
+    ]
+  }
+}
